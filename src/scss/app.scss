@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+@import 'vendor/icofont/_icofont';
+@import 'vendor/normalize/_normalize';
+@import '_fonts';
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background: #333;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 100%;
+    align-items:flex-end;
+
+    header, main, footer {
+        padding: 1em;
+        width: 100%;
+    }
+
+    header {
+        background: #b74215;
+        min-height: 50px;
+        flex: 1 0 75px;
+    }
+
+    main {
+        background: #FFF;
+        flex: 1;
+    }
+
+    footer {
+        background: #333;
+        flex-basis: 100px;
+        min-height: 200px;
+    }
+
+}
