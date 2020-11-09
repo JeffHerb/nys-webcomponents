@@ -27,6 +27,26 @@ body {
         background: #b74215;
         min-height: 50px;
         flex: 1 0 75px;
+
+        // Notice because we are using a slot, we can include all the default styles in this locations
+        div.signin {
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+
+            button {
+                font-family: DSari;
+                border: 0;
+                background: transparent;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+
     }
 
     main {

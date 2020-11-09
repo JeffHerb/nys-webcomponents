@@ -4,19 +4,26 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>
-            Simple Web Component taking in 2 attributes, but customize output/structure
+            Web Component using named slot to support agnostic control
         </title>
         <link rel="stylesheet" href="/css/app.css" type="text/css"/>
     </head>
     <body>
         <header>
             <nys-simpleHeader agencyName="Division of Budget" appTitle="Legislation Tracking System">
+                <!-- notice how we are using slot here! -->
+                <!-- this make the web component agnostic as long as the platfom supports the webcomponent, we should be able to define anything that turns into normal html in this div-->
+                <div slot="signin" class="signin">
+                    <button id="signin-control">
+                        Sign In
+                    </button>
+                </div>
             </nys-simpleHeader>
         </header>
         <main>  
             <div class="body-wrapper" id="body-wrapper">
                 <div>
-                    <p>This example shows how we can be more dynamic by taking in both the <code>agencyName</code> and <code>appTitle</code> attributes and generating a different output structure in the Shadow DOM. Much like the first example, the styles are scoped to the web component.</p>
+                    <p>In the example appove, note how a div, with the defined "slot" attribute is being used to pass a div and button through to the web component. While contents do appear inside of the <code>nys-simpleHeader</code> component. The control itself and the styles for said controls are altered by the application/page css and scripts.</p>
                 </div>
                 <hr>
                 <div>
@@ -45,5 +52,23 @@
 
         </footer>
         <script src="/js/components/nys-simpleHeader.js"></script>
+        <script>
+            (function() {
+                var dSignIn = document.querySelector('#signin-control');
+
+                if (dSignIn) {
+
+                    dSignIn.addEventListener('click', function() {
+                        alert('User pressed the sign in button!');
+                    });
+
+                }
+                else {
+
+                    console.error("Unable to find sign-in control!")
+                }
+
+            })();
+        </script>
     </body>
 </html>

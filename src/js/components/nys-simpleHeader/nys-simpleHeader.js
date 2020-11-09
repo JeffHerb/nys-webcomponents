@@ -5,15 +5,23 @@ window.customElements.define('nys-simpleheader', class NYS_SIMPLE_HEADER extends
 
         const template = document.createElement('template');
 
+        // Notice how we have scoped styles in this component.
+        // We also only have the most basic 
         template.innerHTML = `
             <style>
                 header {
                     color: #FFF;
                     display: flex;
+                    flex: 1;
                     height: 50px;
                 }
                 header .nys-lockup-and-title {
+                    flex: 1;
                     display: inline-flex;
+                    height: 50px;
+                }
+                header .nys-application-contols {
+                    flex: 1;
                     height: 50px;
                 }
                 header .nys-lockup-and-title .nys-lockup {
@@ -43,6 +51,7 @@ window.customElements.define('nys-simpleheader', class NYS_SIMPLE_HEADER extends
                 header .nys-lockup-and-title .nys-app-title-wrapper .nys-agency-name {
                     font-size: 12px;
                 }
+
             </style>
             <header>
                 <div class="nys-lockup-and-title">
@@ -50,6 +59,7 @@ window.customElements.define('nys-simpleheader', class NYS_SIMPLE_HEADER extends
                     <div class="nys-app-title-wrapper"></div>
                 </div>
                 <div class="nys-application-controls">
+                    <slot name="signin"></slot>
                 </div>
             </header>
         `;
@@ -99,7 +109,7 @@ window.customElements.define('nys-simpleheader', class NYS_SIMPLE_HEADER extends
 
             dTitleContainer.appendChild(dSingleLineTitle);
         }
-        
+
     }
 
 });

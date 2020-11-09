@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Test</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NYS Web Component POC</title>
         <link rel="stylesheet" href="/css/app.css" type="text/css"/>
     </head>
     <body>
-        <h1>
-            New York State Web Component POC
-            <i class="icofont-angry-monster"></i>
-        </h1>
+        <header>
+            <nys-simpleHeader appTitle="Web Component Prototype"></nys-simpleHeader>
+        </header>
+        <main>  
+            <div class="body-wrapper" id="body-wrapper">
+                <ul>
+                    <li>
+                        <a href="/tests/nys-simpleHeader.html">Web Component taking in one header title line</a>
+                    </li>
+                    <li>
+                        <a href="/tests/nys-simpleHeader2Titles.html">Web Component taking in two header title lines</a>
+                    </li>
+                    <li>
+                        <a href="/tests/nys-signin.html">Web Component include slot tag for platform specific controls</a>
+                    </li>
+                </ul>
+            </div>
+        </main>
+        <footer>
+
+        </footer>
+        <script src="/js/components/nys-simpleHeader.js"></script>
     </body>
 </html>
